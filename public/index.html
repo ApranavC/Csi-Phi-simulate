@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Physics Simulation</h1>
+
+        <!-- Simulation Type Selection -->
+        <label for="simulation-type">Choose Simulation Type:</label>
+        <select id="simulation-type">
+            <option value="projectile">Projectile Motion</option>
+            <option value="pendulum">Pendulum Motion</option>
+        </select>
+
+        <!-- Simulation Form -->
+        <form id="projectile-form" class="simulation-form" >
+            <!-- Fields for Projectile Motion -->
+            <div id="projectile-params">
+                <label for="velocity">Velocity (m/s):</label>
+                <input type="number" id="velocity" name="velocity" required>
+
+                <label for="angle">Angle (degrees):</label>
+                <input type="number" id="angle" name="angle" required>
+
+                <label for="mass">Mass (kg):</label>
+                <input type="number" id="mass" name="mass" required>
+            </div>
+            <button type="submit" >Run Simulation</button>
+        </form>
+            <!-- Additional fields for Pendulum Simulation -->
+            <!-- HTML for Pendulum Parameters -->
+        <form id="pendulum-form" class="simulation-form" style="display: none;">
+            <div id="pendulum-params">
+            <label for="length">Length (m):</label>
+        <input type="number" id="length" name="length" required>
+
+        <label for="pendulum-angle">Initial Angle (degrees):</label>
+        <input type="number" id="pendulum-angle" name="angle" required>
+
+        <label for="pendulum-mass">Mass (kg):</label>
+        <input type="number" id="pendulum-mass" name="mass" required>
+        </div>
+
+            <button type="submit">Run Simulation</button>
+        </form>
+
+        <canvas id="simulationChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+    <script src="formLogic.js"> </script>
+</body>
+</html>
